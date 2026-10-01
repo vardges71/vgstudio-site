@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00151f">
+  <title>CineTag Support</title>
+  <style>
+    :root {
+      --gold: #f0c15c;
+      --muted: #a7bac6;
+      --line: rgba(125,220,255,.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #f7fbff;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(850px 500px at 80% 0%, rgba(28,177,255,.18), transparent 62%),
+        linear-gradient(180deg, #00566a 0%, #00141f 34%, #00060b 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(850px, calc(100% - 34px));
+      margin: 0 auto;
+      padding: 38px 0 70px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #ffe6a4;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      object-fit: cover;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #c7dbe4;
+      font-size: .95rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      background: rgba(4, 19, 28, .74);
+      box-shadow: 0 28px 70px rgba(0,0,0,.30);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.7rem, 8vw, 4.8rem);
+      letter-spacing: -.05em;
+    }
+
+    .lead {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 30px;
+    }
+
+    section {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 26px 0;
+    }
+
+    section:first-of-type { border-top: 0; }
+
+    h2 {
+      color: #fff0c5;
+      margin: 0 0 12px;
+    }
+
+    p {
+      color: #c0d0d8;
+      line-height: 1.68;
+      margin: 0 0 10px;
+    }
+
+    .email {
+      color: #84e7ff;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      color: #8098a4;
+      text-align: center;
+      padding-top: 28px;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="../">
+        <img src="../assets/cinetag-logo.png" alt="CineTag logo">
+        CineTag
+      </a>
+      <a class="back" href="../">← Back to CineTag</a>
+    </div>
+
+    <main class="panel">
+      <h1>CineTag Support</h1>
+      <p class="lead">Support, questions, problem reports, and privacy-related requests.</p>
+
+      <section>
+        <h2>English</h2>
+        <p>If you need help with CineTag, have questions, or want to report a problem, please contact us by email.</p>
+        <p>Email: <a class="email" href="mailto:vardges71@gmail.com">vardges71@gmail.com</a></p>
+        <p>Privacy-related requests can also be sent to the same email address.</p>
+      </section>
+
+      <section>
+        <h2>Русский</h2>
+        <p>Если вам нужна помощь с CineTag, у вас есть вопросы или вы хотите сообщить о проблеме, свяжитесь с нами по электронной почте.</p>
+        <p>Email: <a class="email" href="mailto:vardges71@gmail.com">vardges71@gmail.com</a></p>
+        <p>Запросы, связанные с конфиденциальностью, также можно отправлять на этот адрес.</p>
+      </section>
+
+      <section>
+        <h2>Français</h2>
+        <p>Si vous avez besoin d’aide avec CineTag, si vous avez des questions ou si vous souhaitez signaler un problème, veuillez nous contacter par courriel.</p>
+        <p>Courriel : <a class="email" href="mailto:vardges71@gmail.com">vardges71@gmail.com</a></p>
+        <p>Les demandes concernant la confidentialité peuvent également être envoyées à cette adresse.</p>
+      </section>
+    </main>
+
+    <footer>© 2026 CineTag · VG Studio</footer>
+  </div>
+</body>
+</html>
