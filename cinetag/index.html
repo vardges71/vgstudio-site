@@ -544,7 +544,37 @@
       .support-copy,
       .support-panel { padding: 24px; }
     }
-  </style>
+  
+.studio-back{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  z-index:100;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 15px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:.92rem;
+  color:#fff;
+  background:rgba(4,14,20,.84);
+  border:1px solid rgba(120,220,255,.18);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 10px 30px rgba(0,0,0,.30);
+}
+.studio-back:hover{transform:translateY(-1px)}
+@media(max-width:640px){
+  .studio-back{
+    left:12px;
+    bottom:12px;
+    padding:10px 13px;
+    font-size:.86rem;
+  }
+}
+</style>
 </head>
 <body>
   <nav>
@@ -735,5 +765,7 @@
       </div>
     </div>
   </footer>
+
+<a class="studio-back" href="/" aria-label="Back to VG Studio">← VG Studio</a>
 </body>
 </html>
