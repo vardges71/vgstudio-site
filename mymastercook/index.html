@@ -3,78 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#d69a2e">
-<meta name="description" content="My MasterCook — discover recipes from ingredients you already have.">
-<title>My MasterCook — Your kitchen, your ingredients, your recipes</title>
+<meta name="theme-color" content="#e5a22f">
+<title>My MasterCook — Cook with what you have</title>
 <style>
 :root{
-  --amber:#d9942d;
-  --amber2:#f5be4c;
-  --cream:#fff5df;
-  --wine:#6a0018;
-  --wine2:#8d1021;
-  --ink:#2d160f;
-  --muted:#72563c;
-  --glass:rgba(255,246,222,.56);
-  --line:rgba(106,0,24,.14);
+  --gold:#e7a52f;--gold2:#ffc94f;--cream:#fff0cf;
+  --wine:#720018;--wine2:#9b0d24;--text:#34160e;--muted:#6a4b35;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+  color:var(--text);
   background:
-    radial-gradient(800px 460px at 88% 0%,rgba(255,249,206,.72),transparent 56%),
-    linear-gradient(180deg,#f5bf4a 0%,#e3a03a 55%,#bd7627 100%);
-  -webkit-font-smoothing:antialiased;
+    radial-gradient(900px 520px at 85% -5%,rgba(255,245,190,.75),transparent 58%),
+    linear-gradient(180deg,#f8c84e 0%,#e3a039 58%,#c57c26 100%);
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 body:before{
-  content:"";
-  position:fixed;inset:0;z-index:-2;
+  content:"";position:fixed;inset:0;z-index:-2;
   background:url("assets/background.png") center/cover no-repeat;
-  opacity:.09;mix-blend-mode:multiply;pointer-events:none;
+  opacity:.11;mix-blend-mode:multiply;pointer-events:none
 }
-a{color:inherit}
-img{display:block;max-width:100%}
-.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+a{color:inherit} img{display:block;max-width:100%}
 
 nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(244,186,63,.76);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(106,0,24,.10);
+  position:sticky;top:0;z-index:30;
+  background:rgba(246,193,70,.78);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(114,0,24,.10)
 }
-.nav-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--wine);font-weight:900;font-size:1.2rem}
-.brand img{width:48px;height:48px;object-fit:contain}
-.nav-links{display:flex;align-items:center;gap:22px;font-size:.94rem}
+.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;color:var(--wine);font-size:1.2rem}
+.brand img{width:52px;height:52px;object-fit:contain}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:.94rem}
 .nav-links a{text-decoration:none}
-.nav-cta{
-  padding:10px 16px;border-radius:999px;color:#fff;
-  background:linear-gradient(135deg,var(--wine2),var(--wine));
-  box-shadow:0 10px 24px rgba(106,0,24,.20);
+.nav-pill{
+  padding:10px 16px;border-radius:999px;
+  background:linear-gradient(135deg,var(--wine2),var(--wine));color:white
 }
 
-.hero{padding:92px 0 72px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.eyebrow{
-  color:var(--wine);text-transform:uppercase;letter-spacing:.18em;
-  font-size:.78rem;font-weight:850;margin-bottom:16px
+.hero{padding:74px 0 60px}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(460px,.95fr);
+  gap:38px;align-items:center
+}
+.copy{min-width:0;position:relative;z-index:5}
+.kicker{
+  text-transform:uppercase;letter-spacing:.17em;font-size:.78rem;
+  font-weight:800;color:var(--wine);margin-bottom:16px
 }
 h1{
   margin:0;color:var(--wine);
-  font-size:clamp(3.7rem,7.2vw,6.9rem);
-  line-height:.92;letter-spacing:-.06em;max-width:720px
+  font-size:clamp(3.6rem,7.2vw,6.9rem);
+  line-height:.91;letter-spacing:-.06em;
+  max-width:720px
 }
-h1 em{
-  color:var(--cream);font-style:normal;
-  text-shadow:0 5px 20px rgba(106,0,24,.11)
-}
-.hero p{
-  color:var(--muted);font-size:1.14rem;line-height:1.7;
-  max-width:640px;margin:27px 0 30px
+h1 span{color:#fff5dc;text-shadow:0 6px 22px rgba(114,0,24,.13)}
+.lead{
+  margin:26px 0 28px;max-width:610px;
+  color:var(--muted);font-size:1.13rem;line-height:1.68
 }
 .actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{
@@ -82,118 +73,73 @@ h1 em{
   display:inline-flex;align-items:center;justify-content:center;
   text-decoration:none;font-weight:800
 }
-.primary{background:linear-gradient(135deg,var(--wine2),var(--wine));color:white;box-shadow:0 12px 28px rgba(106,0,24,.22)}
-.secondary{background:rgba(255,248,229,.52);border:1px solid rgba(106,0,24,.16);color:var(--wine)}
+.btn.primary{background:linear-gradient(135deg,var(--wine2),var(--wine));color:#fff;box-shadow:0 12px 28px rgba(114,0,24,.22)}
+.btn.secondary{background:rgba(255,247,225,.5);border:1px solid rgba(114,0,24,.18);color:var(--wine)}
 
-.hero-visual{
-  min-height:600px;position:relative;display:flex;align-items:center;justify-content:center
+.visual{
+  min-height:610px;position:relative;
+  display:flex;align-items:center;justify-content:center;
 }
-.phone{
-  width:min(350px,74vw);border-radius:46px;overflow:hidden;
-  border:2px solid rgba(43,18,7,.72);
-  box-shadow:0 36px 90px rgba(84,40,0,.32);
-  transform:rotate(4deg);z-index:3;background:#111
-}
-.food-tile{
-  position:absolute;left:-24px;bottom:54px;width:230px;height:230px;
-  border-radius:34px;overflow:hidden;z-index:4;
-  border:10px solid rgba(255,245,217,.85);
-  box-shadow:0 24px 60px rgba(89,42,0,.26);
-}
-.food-tile img{width:100%;height:100%;object-fit:cover;object-position:center 34%}
-.circle{
+.sun{
   position:absolute;width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,249,219,.72) 0 46%,rgba(246,195,78,.34) 47% 64%,transparent 65%);
-  z-index:0
+  background:radial-gradient(circle,#ffe7a7 0 44%,#efb33d 62%,rgba(239,179,61,0) 72%);
+  opacity:.6;filter:blur(4px)
 }
-.small-logo{
-  position:absolute;right:20px;top:42px;width:105px;z-index:5;
-  filter:drop-shadow(0 10px 20px rgba(106,0,24,.18))
+.device{
+  position:absolute;width:330px;border-radius:46px;overflow:hidden;
+  border:2px solid rgba(49,18,6,.72);
+  background:#111;box-shadow:0 34px 75px rgba(90,42,0,.28)
 }
+.device img{width:100%;height:auto}
+.device.front{transform:translate(-75px,0) rotate(-5deg);z-index:3}
+.device.back{width:285px;transform:translate(120px,38px) rotate(6deg);z-index:2;opacity:.97}
 
-section{padding:76px 0}
+section{padding:72px 0}
 .section-head{margin-bottom:34px}
 .section-head h2{
   margin:0;color:var(--wine);
-  font-size:clamp(2.5rem,5vw,4.4rem);
+  font-size:clamp(2.4rem,5vw,4.3rem);
   line-height:1;letter-spacing:-.045em
 }
-.section-head p{color:var(--muted);max-width:720px;line-height:1.66}
-
-.story{
-  display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch
+.section-head p{max-width:720px;color:var(--muted);line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  min-height:450px;border-radius:28px;overflow:hidden;position:relative;
+  box-shadow:0 24px 55px rgba(86,42,0,.18);
+  border:1px solid rgba(114,0,24,.12);isolation:isolate
 }
-.story-card{
-  min-height:420px;border-radius:30px;overflow:hidden;position:relative;
-  border:1px solid var(--line);box-shadow:0 24px 62px rgba(84,40,0,.18);
-  background:rgba(255,245,219,.35)
-}
-.story-card img{width:100%;height:100%;object-fit:cover}
-.story-copy{
-  display:flex;flex-direction:column;justify-content:center;
-  border:1px solid var(--line);border-radius:30px;padding:36px;
-  background:rgba(255,247,225,.54);
-  box-shadow:0 24px 62px rgba(84,40,0,.12)
-}
-.story-copy h3{margin:0 0 14px;color:var(--wine);font-size:2rem;letter-spacing:-.03em}
-.story-copy p{margin:0;color:var(--muted);line-height:1.72}
-
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{
-  border:1px solid var(--line);border-radius:26px;padding:24px;
-  background:rgba(255,247,225,.50);box-shadow:0 18px 46px rgba(84,40,0,.12)
-}
-.step img{border-radius:18px;margin-bottom:18px}
-.badge{
-  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
-  background:var(--wine);color:#fff;font-weight:900;margin-bottom:12px
-}
-.step h3{margin:0 0 8px;color:var(--wine);font-size:1.28rem}
-.step p{margin:0;color:var(--muted);line-height:1.55}
-
-.gallery{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px
-}
-.gallery img{
-  border-radius:20px;border:1px solid var(--line);
-  box-shadow:0 16px 38px rgba(84,40,0,.15)
-}
-
-.quote{
-  border-radius:30px;padding:38px;
-  background:linear-gradient(135deg,var(--wine2),var(--wine));
-  color:#fff;box-shadow:0 28px 70px rgba(106,0,24,.24)
-}
-.quote h2{margin:0 0 10px;font-size:clamp(2.2rem,4vw,3.8rem);letter-spacing:-.04em}
-.quote p{margin:0;color:#ffe9d0;line-height:1.65;max-width:760px}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(63,21,0,.78) 90%);z-index:0}
+.card-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:25px;color:white}
+.card-copy h3{margin:0 0 7px;font-size:1.38rem}
+.card-copy p{margin:0;color:#f9e9c9;line-height:1.5}
 
 .back-vg{
   position:fixed;left:16px;bottom:16px;z-index:100;
   padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800;
-  color:#fff;background:rgba(46,20,8,.80);border:1px solid rgba(255,255,255,.15);
+  color:white;background:rgba(45,20,8,.78);border:1px solid rgba(255,255,255,.16);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)
 }
 
-footer{padding:32px 0 44px;border-top:1px solid rgba(106,0,24,.10);color:#6c503a;font-size:.9rem}
+footer{padding:32px 0 44px;border-top:1px solid rgba(114,0,24,.11);color:#6b4d37;font-size:.9rem}
 
 @media(max-width:980px){
-  .hero-grid,.story{grid-template-columns:1fr}
-  .hero-visual{min-height:580px}
-  .steps{grid-template-columns:1fr 1fr}
-  .gallery{grid-template-columns:1fr 1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .copy{text-align:left}
+  .visual{min-height:600px;margin-top:8px}
+  .grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
   .wrap{width:min(100% - 24px,1180px)}
-  .nav-links a:not(.nav-cta){display:none}
-  .hero{padding-top:56px}
+  .nav-links a:not(.nav-pill){display:none}
+  .hero{padding-top:54px}
   h1{font-size:clamp(3.4rem,17vw,5.2rem)}
-  .hero-visual{min-height:520px}
-  .phone{width:min(290px,75vw)}
-  .food-tile{width:175px;height:175px;left:0;bottom:44px}
-  .small-logo{width:88px;right:4px;top:28px}
-  .circle{width:390px;height:390px}
-  .steps{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr 1fr}
+  .visual{min-height:510px}
+  .device.front{width:278px;transform:translate(-42px,0) rotate(-4deg)}
+  .device.back{width:240px;transform:translate(72px,54px) rotate(5deg)}
+  .sun{width:390px;height:390px}
+  .grid{grid-template-columns:1fr}
+  .card{min-height:540px}
 }
 </style>
 </head>
@@ -202,10 +148,9 @@ footer{padding:32px 0 44px;border-top:1px solid rgba(106,0,24,.10);color:#6c503a
   <div class="wrap nav-inner">
     <a class="brand" href="#top"><img src="assets/logo.png" alt="My MasterCook logo"><span>My MasterCook</span></a>
     <div class="nav-links">
-      <a href="#idea">Idea</a>
-      <a href="#how">How it works</a>
-      <a href="#screens">Screens</a>
-      <a class="nav-cta" href="#how">Explore</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a class="nav-pill" href="#features">Explore</a>
     </div>
   </div>
 </nav>
@@ -213,92 +158,46 @@ footer{padding:32px 0 44px;border-top:1px solid rgba(106,0,24,.10);color:#6c503a
 <main id="top">
 <header class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Your kitchen already has possibilities</div>
-      <h1>Cook with what you have.<br><em>Discover what you can make.</em></h1>
-      <p>My MasterCook starts with the ingredients already in your kitchen. Search smarter, compare recipes, save favorites and keep cooking ideas close at hand.</p>
+    <div class="copy">
+      <div class="kicker">Cook smarter with what you have</div>
+      <h1>Turn ingredients into <span>something delicious.</span></h1>
+      <p class="lead">Search recipes by ingredients, meals, cuisines and dietary preferences. Save favorites, compare nutrition information and keep cooking ideas in one place.</p>
       <div class="actions">
-        <a class="btn primary" href="#how">See how it works</a>
+        <a class="btn primary" href="#features">Explore My MasterCook</a>
         <a class="btn secondary" href="/">VG Studio</a>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="circle"></div>
-      <img class="small-logo" src="assets/logo.png" alt="">
-      <div class="phone"><img src="assets/screen-home.png" alt="My MasterCook home screen"></div>
-      <div class="food-tile"><img src="assets/screen-recipe.png" alt=""></div>
+    <div class="visual">
+      <div class="sun"></div>
+      <div class="device front"><img src="assets/screen-home.png" alt="My MasterCook home screen"></div>
+      <div class="device back"><img src="assets/screen-search.png" alt="My MasterCook search screen"></div>
     </div>
   </div>
 </header>
 
-<section id="idea">
+<section id="features">
   <div class="wrap">
     <div class="section-head">
-      <h2>Start with your kitchen, not the shopping list.</h2>
-      <p>Instead of choosing a recipe first, My MasterCook lets you begin with the ingredients you already have and discover recipes that fit.</p>
+      <h2>From ingredients to dinner.</h2>
+      <p>My MasterCook keeps the flow simple: add what you have, narrow the search, compare recipes, and start cooking.</p>
     </div>
-
-    <div class="story">
-      <div class="story-card"><img src="assets/screen-recipe.png" alt="Recipe details"></div>
-      <div class="story-copy">
-        <h3>Less guessing. Less waste.</h3>
-        <p>Add ingredients, choose a meal or cuisine, and narrow by dietary preferences. My MasterCook turns everyday ingredients into useful recipe ideas you can actually make.</p>
-      </div>
+    <div class="grid">
+      <article class="card"><img src="assets/screen-search.png" alt=""><div class="card-copy"><h3>Search with what you have</h3><p>Build searches from ingredients, meals, cuisines and dietary choices.</p></div></article>
+      <article class="card"><img src="assets/screen-results.png" alt=""><div class="card-copy"><h3>Compare the options</h3><p>See ratings, serving sizes and nutrition information before you choose.</p></div></article>
+      <article class="card"><img src="assets/screen-recipe.png" alt=""><div class="card-copy"><h3>Cook from one screen</h3><p>Open recipe details and keep the cooking steps close while you work.</p></div></article>
+      <article class="card"><img src="assets/screen-favorites.png" alt=""><div class="card-copy"><h3>Save favorites</h3><p>Keep the recipes you want to make again in your own collection.</p></div></article>
+      <article class="card"><img src="assets/screen-home.png" alt=""><div class="card-copy"><h3>Get inspired</h3><p>Start from a featured recipe when you do not know what to cook.</p></div></article>
+      <article class="card"><img src="assets/logo.png" alt="" style="object-fit:contain;padding:70px;background:linear-gradient(180deg,#f3bb45,#d99028)"><div class="card-copy"><h3>Made for everyday cooking</h3><p>A focused recipe companion with a warm, familiar visual identity.</p></div></article>
     </div>
   </div>
 </section>
 
-<section id="how">
+<section id="about">
   <div class="wrap">
     <div class="section-head">
-      <h2>Three steps from fridge to plate.</h2>
-      <p>A focused flow designed around the way people actually decide what to cook.</p>
-    </div>
-
-    <div class="steps">
-      <article class="step">
-        <div class="badge">1</div>
-        <img src="assets/screen-search.png" alt="">
-        <h3>Add what you have</h3>
-        <p>Search with ingredients, meals, cuisines and dietary preferences.</p>
-      </article>
-      <article class="step">
-        <div class="badge">2</div>
-        <img src="assets/screen-results.png" alt="">
-        <h3>Compare recipes</h3>
-        <p>See ratings, servings and nutrition information before choosing.</p>
-      </article>
-      <article class="step">
-        <div class="badge">3</div>
-        <img src="assets/screen-recipe.png" alt="">
-        <h3>Start cooking</h3>
-        <p>Open the recipe and keep the details close while you cook.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="screens">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Your recipes, your way.</h2>
-      <p>Browse inspiration, save favorites and come back to the dishes you want to make again.</p>
-    </div>
-    <div class="gallery">
-      <img src="assets/screen-home.png" alt="">
-      <img src="assets/screen-search.png" alt="">
-      <img src="assets/screen-results.png" alt="">
-      <img src="assets/screen-favorites.png" alt="">
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="quote">
-      <h2>Your next meal might already be in your kitchen.</h2>
-      <p>My MasterCook is built for everyday cooking: practical searches, useful recipe information, and a simple way to turn what you have into what you want to eat.</p>
+      <h2>Use what you have. Waste less. Discover more.</h2>
+      <p>Instead of starting with a recipe and buying every ingredient for it, My MasterCook lets you begin with your own kitchen and work outward from there.</p>
     </div>
   </div>
 </section>
